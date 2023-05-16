@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-blog p-3 fa-2xl" style="color: #0a5ae6;"></i> Blogger</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+<% if(currentUser){ %>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/home"><i class="fa-solid fa-house  fa-xl p-3" style="color: #085ae7;"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs"><i class="fa-solid fa-blog p-3 fa-xl" style="color: #0a5ae6;"></i></a>
+          </li>
+        </ul>
+<% } %>
+<div class="navbar-nav ms-auto">
+  
+   <% if(!currentUser) { %>
+    <a href="/login" class="nav-link">Login</a>
+    <a href="/register" class="nav-link">Register</a>
+   <% } else{ %>
+<div class="dropstart">
+    <button class="nav-link btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Hello <%= currentUser.username %></button>
+<ul class="dropdown-menu bg-dark ">
+    <li><a href="/logout" class="nav-link"><i class="fa-solid fa-right-from-bracket " style="color: #c1c3c8;"></i> Logout</a></li>
+  </ul>
+</div>
+    
+
+   <% } %> 
+</div>
+
+      </div>
+    </div>
+  </nav>

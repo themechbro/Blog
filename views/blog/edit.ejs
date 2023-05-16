@@ -1,0 +1,27 @@
+<%- layout('layout/boilerplate.ejs') -%> 
+
+<div class="container bg-transparent rounded shadow-lg p-5">
+<p class="display-6 text-light">Editing Blog</p>
+<form action="/<%= foundBlog.id %>?_method=PUT" method="post" novalidate class="needs-validation">
+<div class="mb-3">
+  <label for="title" class="form-label text-light">Title</label>
+  <input type="text" class="form-control" id="title" name="title" value="<%=foundBlog.title%>">
+<div class="valid-feedback">
+                        Looks Good!
+                    </div>
+</div>
+<div class="mb-3">
+  <label for="body" class="form-label text-light">Jot Something down here</label>
+  <textarea class="form-control" id="body" rows="3" name="body" value="<%=foundBlog.body%>"></textarea>
+<div class="valid-feedback">
+                        Looks Good!
+                    </div>
+</div>
+<div class="row mt-3">
+<button class="btn btn-grad-edit  col">Edit Blog</button>
+<a href="/view/<%= foundBlog.id%>" class="btn btn-grad-back col">Go back</a>
+</div>
+</form>
+
+</div>
+

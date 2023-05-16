@@ -1,0 +1,13 @@
+<div class="row g-2">
+<% for(let blogs of blogsUpinserver){ %>
+<div class="card bg-dark rounded shadow-lg " >
+<div class="card-body col-12 col-md-4">
+    <h5 class="card-title text-light display-6 w-100"><%=blogs.title %></h5>
+    <h6 class="card-subtitle mb-2 text-light blockquote">By:-<%= blogs.author.username %></h6>
+  
+    <a href="/view/<%= blogs.id %>" class="btn btn-sm btn-grad-view"> <i class="fa-solid fa-eye" style="color: #c4c9ca;"></i> View Blog</a>
+  </div>
+</div>
+<% } %>
+
+</div>

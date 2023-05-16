@@ -1,0 +1,21 @@
+<%- layout('layout/boilerplate.ejs') -%> 
+
+
+<div class="card text-center w-50 m-auto rounded shadow-lg">
+  <div class="card-header blockquote">
+    Featured by <%= foundBlog.author.username %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title display-6"><u><%= foundBlog.title %></u></h5>
+    <p class="card-text lead"><%=foundBlog.body%></p>
+<div class="row">
+    <a href="/blogs" class="btn btn-sm btn-grad-back col"> <i class="fa-solid fa-backward-step" style="color: #fff;"></i> Go Back</a>
+<% if(currentUser&&foundBlog.author.equals(currentUser.id)){%>
+<a href='/<%=foundBlog.id%>/edit'class='btn btn-sm btn-grad-edit col'><i class="fa-solid fa-pen-to-square" style="color: #433d3e;"></i> Edit Blog </a>
+<form action="/view/<%=foundBlog.id %>?_method=DELETE" method="post" class="col">
+<button class='btn btn-sm btn-grad-delete'><i class="fa-solid fa-trash" style="color: #2d2a2c;"></i> Delete Blog </button>
+</form>
+<%} %>
+</div>
+  </div>
+</div>

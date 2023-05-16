@@ -1,0 +1,67 @@
+<%- layout('layout/boilerplate.ejs') -%> 
+<div class="container bg-transparent rounded shadow-lg p-5">
+<p class="display-6 text-light"><u>Create a new blog</u></p>
+<form action="/home" method="post" novalidate class="needs-validation">
+<div class="mb-3">
+  <label for="title" class="form-label text-light">Title</label>
+  <input type="text" class="form-control" id="title" name="title">
+<div class="valid-feedback">
+                        Looks Good!
+                    </div>
+</div>
+<div class="mb-3">
+  <label for="body" class="form-label text-light">Jot Something down here</label>
+  <textarea class="form-control" id="body" rows="3" name="body"></textarea>
+<div class="valid-feedback">
+                        Looks Good!
+                    </div>
+</div>
+<button class=" btn-grad  mt-3 postblog">Post Blog</button>
+</form>
+
+</div>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+  var quill = new Quill('#body', {
+    theme: 'snow' // 'snow' is one of the available themes provided by Quill
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>

@@ -1,0 +1,26 @@
+<%- layout('layout/boilerplate.ejs') -%> 
+<div class="container d-flex justify-content-center align-items-center mt-5 ">
+<div class="container1">
+        <div class="card-register">
+            <a class="singup">Sign Up</a>
+            <form action="/register" method="post">
+            <div class="inputBox1">
+                <input type="text" required="required" name="email">
+                <span class="user">Email</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" required="required" name="username">
+                <span>Username</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="password" required="required" name="password">
+                <span>Password</span>
+            </div>
+
+            <button class="enter">Sign Up</button>
+</form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<%- layout('layout/boilerplate.ejs') -%> 
+<h1 class="display-3 text-center p-5"><u><em>Top Blogs!</em></u></h1>
+<div class=" container blogs px-4">
+<% for(let blogs of blogsUpinserver){ %>
+<div class="cards">
+    <figure class="card-blogs">
+        <figcaption class="card_title p-1"><%= blogs.title %></figcaption>
+<a href="/view/<%= blogs.id %>" class=""> <i class="fa-solid fa-eye" style="color: #c4c9ca;"></i> View Blog</a>
+    </figure>
+</div>
+<% } %>
+</div>
