@@ -368,3 +368,15 @@ text-decoration: none;
 color: #bdb8b8;
 }
 
+.index{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10%;
+background-color: #1b215372;
+}
+body,html{
+width: 100%;
+height: 100%;
+}
